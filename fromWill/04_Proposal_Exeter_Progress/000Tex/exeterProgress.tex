@@ -1,0 +1,73 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage{a4wide}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage{courier}
+\usepackage{framed}
+\usepackage[nottoc,numbib]{tocbibind}
+\usepackage{placeins}
+\usepackage{bm}
+\usepackage{multirow}
+\usepackage{rotating}
+%\floatstyle{boxed}
+\restylefloat{figure}
+
+%For under-brackets, labelling equations
+\usepackage{mathtools}
+
+%For letter-based enumerate lists
+\usepackage[shortlabels]{enumitem}
+
+%\numberwithin{equation}{section}
+%\numberwithin{figure}{section}
+%\numberwithin{table}{section}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{ }
+\fancyhead[RE,LO]{Multi-fluid proposal}
+\fancyfoot[CE,CO]{\thepage}
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\renewcommand\refname{Bibliography}
+
+\usepackage[round]{natbib}
+\bibliographystyle{abbrvnat}
+\setcitestyle{authoryear}
+
+\setlength{\parindent}{0pt}
+
+
+
+
+
+\begin{document}
+
+\section{Early result from the Exeter single-column model}
+
+Through ParaCon, the multi-fluids group at the University of Exeter have developed a 2-fluid single-column model (SCM) designed to model shallow convection at coarse resolutions. The scheme uses fluid definitions which facilitate maximum tracer flux from the surface \cite[]{efstathiou2019}, as well as a variety of entrainment/detrainment closures dependent on turbulent kinetic energy, vertical velocity convergence and atmospheric instability. The current prototype scheme is able to approximately reproduce the cloud properties of the ARM case \cite[]{brown2002}, shown in figure \ref{fig_clouds}. The model also achieves a good representation of the coherent structures in the atmosphere through the area fraction of the updraft/convective fluid (figure \ref{fig_area_fraction}). The single-column model currently models the top of the boundary layer and the cloud base at too-high an altitude, an issue which is common to existing single-column models \cite[e.g.][]{neggers2004,angevine2010}. Multi-fluid models should perform as well as existing single-column models at coarse resolutions (where their mass-flux scheme assumptions are valid) but should perform better than existing models in the grey zone. \\
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\linewidth]{../timeseries_cloud_height.png}
+	\caption{The boundary layer height (blue), cloud base (black) and cloud top (red) for the ARM test case. Large eddy simulation results are shown by the solid lines and the dashed lines show the single-column model results.}
+	\label{fig_clouds}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.6\linewidth]{../updraftFraction_3.png}
+	\caption{The fraction of the updraft fluid diagnosed from the large eddy simulation (solid) and modelled by the 2-fluid single-column model (dashed). The grey shaded regions indicate the boundary layer depth in the LES and SCM schemes, which correspond to figure \ref{fig_clouds} at $\sim$9 hours.}
+	\label{fig_area_fraction}
+\end{figure}
+
+\bibliography{bibliography}
+\end{document}

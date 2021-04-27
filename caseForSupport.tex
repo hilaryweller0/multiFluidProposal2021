@@ -1,0 +1,272 @@
+\documentclass[11pt,a4paper]{article}
+\input{top}
+\usepackage[T1]{fontenc}
+\usepackage{pgfgantt, pifont}
+\usepackage{multicol}
+\usepackage{todonotes,ulem}
+
+\renewcommand{\rmdefault}{phv}
+
+\begin{document}
+
+\title{Case For Support \\ \Large
+Multi-fluid parameterisation of convection
+}
+\author{Hilary Weller \and Georgios Efstathiou \and John Thuburn \and William McIntyre \and Daniel Shipley}
+\date{}
+\maketitle
+
+\part{Track Record}
+
+\paragraph*{Dr Hilary Weller (Reading)} has been the lead PI on three NERC grants on numerical methods for atmospheric models, a PI on both phases of the Met Office/NERC/STFC UK Dynamical Core project ``Gung-Ho'', to design and build the next Met Office dynamical core, a Co-I on both phases of the Met Office/NERC Paracon projects to improve the modelling of convection in atmospheric models.
+
+Dr Weller has had successful collaborations with Met Office staff, including creating and analysing long time step conservative transport schemes \cite[]{CWPS17,SWMD17}, solving the Monge-Amp\`ere equation on the surface of a sphere for the first time \cite[]{WBBC16} and finding optimal coupling between fast and slow processes \cite[][]{WLW13}. She led pioneering work analysing numerical methods for quasi-uniform grids of the sphere \cite[e.g.][]{WWF09,Wel12,WTC12} and proposed improvements in modelling flow over orography \cite[]{WS14}. 
+
+Before working on numerical methods, Dr Weller worked on tropical meteorology \cite[e.g.][]{LGWS09} which kindled her interest in atmospheric convection. Recently she has combined her applied meteorology interest with her numerical modelling expertise, proposing, with Prof. Thuburn, the use of multi-fluid modelling for representing sub-grid-scale convection \cite[]{TWV+18} and creating the first numerical method to solve these equations \cite[]{WM19}. \cite[]{WMS20} demonstrates a skillful representation of sub-grid dry convection using a multi-fluid model.
+
+\paragraph*{Dr Georgios Efstathiou (Exeter)} has over 15 years of experience in research on the modelling of
+atmospheric processes at various scales, from turbulent motions in the boundary layer
+to heavy precipitation synoptic systems. An overarching theme is understanding the
+connections between atmospheric scales with the aim to improve high-resolution
+numerical weather prediction. He has conducted many Large Eddy Simulation (LES) studies and used LES to identify 
+the characteristics of the boundary-layer grey zone \citep[e.g.][]{efstathiou2015}
+and develop parametrizations suitable for sub-kilometre, very high-resolution models 
+\citep{efstathiou2016}. One of his main contributions in grey zone 
+studies was the extension of Dynamic sub-grid models from the LES to the grey zone region 
+providing adaptive and scale dependent turbulence length scales for sub-grid models 
+\citep{efstathiou2018,efstathiou2019a}. As part of the NERC/Met Office ParaCon 
+project he has developed a novel method to identify updrafts in convective flows 
+by optimizing the multi-fluid decomposition of the atmosphere \citep{efstathiou2019b}.
+
+\paragraph*{Prof. John Thuburn (Exeter)} holds a Chair in Geophysical Fluid Dynamics at the University of Exeter, jointly
+funded by the Met Office under the Met Office Academic Partnership.
+Since 2000 he has collaborated closely with the Met Office on numerical methods for their
+weather and climate models. He made important contributions to the development of the
+ENDGame dynamical core \cite[e.g.][]{WSW+14}, which is now a major operational success.
+% Could drop the next two sentences
+Since 2011 he has collaborated with the Met Office and other UK academic partners on the ``Gung-Ho''
+project to develop a future dynamical core suitable for massively parallel computer
+architectures. An important theme is to capture key aspects of accuracy related to balance and
+conservation on non-traditional grids \cite[e.g.][]{TC15}.
+
+The coupling of physical parameterizations and subgrid models to resolved dynamics is often
+particularly subtle because the coupling occurs via marginally resolved and imperfectly
+represented scales. Prof.\ Thuburn has contributed to understanding these numerical aspects
+of physics-dynamics coupling in the context of quasi-two-dimensional turbulent cascades \cite[e.g.][]{TKW14} and boundary layer parameterizations \cite[]{HTW13a}.
+Most relevant for the present proposal is that,
+together with co-authors, he developed the mathematical framework for the multi-fluid
+approach \citep[][]{TWV+18}, analysed the conservation and normal mode properties
+of the unparameterized multi-fluid equations \citep[][]{TV18}, and demonstrated
+a proof of concept for a single-column model of the dry CBL \citep[][]{TEB19}.
+
+
+\section*{Institutions}
+
+\paragraph*{The University of Reading Meteorology department} is one of the largest of its kind in Europe with 50 academic staff, 20 senior research staff and fellowship holders, around 90 postdocs and around 70 PhD students. In the 2014 Research Excellence Framework (REF), 86\% of their research was graded as world leading or internationally excellent. Their ``research power'' places them 3rd in the country in Earth Systems and Environmental Science, and the impact of their research was rated 9th highest in the country. The University is a formal Academic Partner of the Met Office (MO) and hosts about 20 Met Office scientists. The Reading PDRA will attend Mesoscale group meetings and weekly seminars from internationally renowned scientists on atmosphere and ocean science and modelling, weather prediction and climate systems.
+
+\paragraph*{The Department of Mathematics at the University of Exeter} includes the Geophysical and Astrophysical Fluid Dynamics and Exeter Climate Systems research groups, who between them have over~50 staff and over~40 PhD students researching topics related to weather, climate, and modelling. Both groups have excellent track records of collaboration with the Met Office. In the Research Excellence Framework 2014, for UoA 10 (Mathematical Sciences) 83\% of our research was assessed as world leading (4*) or internationally excellent (3*), while for UoA~7 (Earth Systems and Environmental Sciences) 89\% of our research was assessed as 4* or 3*.  The University has excellent facilities and infrastructure to support the proposed
+research, including access to literature, IT and high performance computing,
+and training and career development support for staff.
+
+\paragraph*{The Met Office} is a world leader in weather forecasting and climate prediction, and their atmospheric model is used by many operational centres (for example, the Australian Bureau of Meteorology). The convection parameterisation group, led by Dr Alison Stirling, publishes widely about their research on aspects of on convection, weather prediction and parameterisation. The group make continual improvements to their convection parameterisation. Dr Adrian Lock leads the boundary layer parametrization group, publishing on clouds, turbulence, forecast uncertainty, large-eddy simulation and boundary layer modelling. The group develops the boundary layer parameterisation of the current prediction model and the next generation model. Both groups contribute to ensuring that the Met Office model maintains its high skill and the Met Office maintains its international reputation in numerical weather prediction, climate projection and research. 
+
+\newpage
+
+\part{Research Proposal}
+
+\section{Motivation and Summary}
+
+The representation of sub-grid-scale convection is arguably the weakest aspect of weather and climate models, leading to unrealistic simulations of monsoons, the diurnal cycle of rainfall and processes involving convectively coupled waves such as the Madden-Julian Oscillation \cite[]{SAB+13,HPB+14}. The representation of the sub-grid-scale flow becomes particularly challenging at resolutions where convection is partially resolved -- the grey zone -- as assumptions behind current schemes such as horizontal homogeneity are grossly violated.
+
+Standard convection schemes are based on a crude representation of vertical fluxes in terms of a division of the sub-grid flow into separate, homogeneous flows such as updraught, downdraught and environment, with assumptions of horizontally homogeneous quasi-equilibrium, no net mass flux and no horizontal transports. The multi-fluid approach removes these assumptions and has shown promise in single column models but is as yet unproven in three dimensional models and does not address sub-grid variability beyond the multi-fluid division. High-order turbulence modelling addresses the moments of probability distributions of sub-grid variability. The multi-fluid and high-order turbulence approaches thus provide two different ways of accounting for unresolved variability in models, each likely to be most useful in different regimes. Their unification has the potential to work well across a much wider range of regimes, in particular, enabling the construction of a scale aware model that is applicable at a range of resolutions encompassing the turbulent and convective grey zones.
+
+High resolution Large Eddy Simulation (LES) will be used to diagnose multi-fluid budgets to inform closures for unknowns in the unified equations and to evaluate multi-fluid modelling of convection. In order to extend high-order turbulence modelling to be applicable in combination with multi-fluids, new closures for terms involving pressure fluctuations and for convective entrainment and detrainment will be developed and tested. The new approach will be evaluated using a suite of equilibrium and non-equilibrium test cases of convective growth and propagation. A key deliverable will be a community turbulent multi-fluids model enabling the future research needed to develop the approach towards operational use.
+
+
+\section{Scientific Background}
+
+In coarse resolution models, convection parameterisation is necessary because, without it, convection is forced to occur at the model grid scale resulting in highly unrealistic behaviour and instability. Schemes such as mass flux convection remove this instability by re-distributing heat, moisture and momentum in the vertical but not mass \cite[]{Tied89,GR90}. Convection is assumed to be in equilibrium with the large scale so no account is taken of the gradual build-up of convection. Convection in one grid column is assumed to be independent of its neighbours and advection of convective systems is neglected. There have been valuable improvements such as relaxing the quasi-equilibrium assumption \cite[]{PR98,GG05,Par14} and stochasticity \cite[]{PC08} but due to the fundamental assumptions in convection parameterisation it has not been possible to create schemes that work well when convection is partially resolved -- the grey zone.
+
+Turbulence in the convective boundary-layer is observed to comprise both large, coherent structures and smaller, more isotropic eddies; many parametrizations \cite[e.g.][]{LBB+00} split boundary layer vertical fluxes into non-local, often counter-gradient, and local, down-gradient, terms representing these two classes of turbulent flow. In the Eddy Diffusivity Mass Flux (EDMF) scheme of the convective boundary layer \cite[]{SST07}, non-local transports are handled by the mass flux assumption and local transports by an eddy diffusivity. Deep convection is even more dominated by the coherent structures and is treated by, for example, mass flux convection schemes. 
+
+\cite{TWV+18,WM19} have recently proposed a new approach: multi-fluid modelling of convection, in which convective updraughts, downdraughts and the stable environment are modelled as distinct fluids with separate, but consistent, momentum, continuity, energy and moisture transport equations. The fluids interact via entrainment, detrainment and pressure terms. Consequently non-equilibrium, net mass transport and other horizontal and vertical transports are handled by these equations rather than by empirical parameterisation. This is related to the extended EDMF scheme of \cite{TKP+18}. Multi-fluid modelling needs some of the same closures as mass-flux parameterisations such as entrainment and detrainment. Convection parameterisations also include trigger functions and cloud base mass flux (which in this proposal are described as a form of entrainment). There have been other attempts to include net mass transport by convection \cite[]{KB08,MB19} by modifying existing models in a way which is unlikely to work in the grey zone whereas the multi-fluid entails the solution of a consistent equation set.
+
+The idea of two fluid partitions, each with simple univariate or bivariate Gaussian distributions of sub-grid variability was introduced by \cite{GLC02} and forms the basis of the CLUBB parametrization. However, specifying the parameters in such distributions requires knowledge of (or assumptions about) many high-order moments; multi-fluids each with second-order moment equations provides potentially a simpler but more powerful approach.
+
+Much work on parameterising turbulence in the atmosphere has focused on the boundary layer. Most relevant to this project is the \citet{mellor1973,mellor1974,mellor1982} hierarchy of turbulence closure models. The continuous governing equations were ensemble averaged and manipulated to obtain prognostic equations for all second-order moments such as turbulent kinetic energy (TKE) and sub-grid-scale heat fluxes. For this to work as part of a parameterisation of deep convection, the ensemble averaging would be needed within each fluid representing the convective plumes and their environment.
+
+As supercomputers increase in size, convection is better resolved over larger areas \cite[eg.][]{GC17}. Computers will never be big enough to fully resolve convection over the whole globe in weather predictions \cite[eg.][]{SSJ+19} so parameterisaiton will always be needed. There are terabytes of convection resolving simulations available that have not yet been fully analysed. In order to make sense of such large amounts of data, machine learning has been used to find relationships between behaviour that is sub-grid-scale with respect to a coarse model and variables that are resolved by the coarse model. Machine learning with neural networks has been used to improve the representation of sub-grid processes in ocean and atmosphere models, including convection parameterisation \cite[]{ogorman2018}. Neural networks may be able to discover processes from high resolution data that have not been observed. However, due to their lack of physical basis, there is concern that neural networks may not be able to extrapolate to new situations such as global warming and that they are effectively computational black boxes, and are therefore difficult to interpret. An alternative which would allow for finding closed-form parametrizations of unknown terms, is the relevance vector machine \cite[]{tipping2001}. This uses a sparse Bayesian regression to discover which combination of resolved variables best reproduces a desired subgrid term diagnosed from a high-resolution simulation. This results in a directly interpretable parameterisation which can be analysed for physical consistency. It has been used to suggest a successful scale-aware parametrization for ocean mesoscale eddies \cite[]{zanna2020}.
+
+\section{More detail on Multi-fluid Modelling of Convection}
+\label{sec:mf}
+
+The multi-fluid, dry Boussinesq Navier-Stokes equations \cite[approximated by][]{WMS20} are:
+\begin{eqnarray}
+\frac{\partial\sigma_{i}}{\partial t}+\nabla\cdot(\sigma_{i}\mathbf{u}_{i}) & = & \sum_{j\ne i}\left\{ M_{ji}-M{}_{ij}\right\} \label{eq:sigma}\\
+\frac{D_{i}\mathbf{u}_{i}}{Dt}+\nabla P_{i} & = & b_{i}\mathbf{k}+\nabla\cdot\left( \nu_i\nabla\mathbf{u}_{i}\right)+\frac{1}{\sigma_{i}}\sum_{j\ne i}\left\{ M_{ji}\left(\mathbf{u}_{ji}^{T}-\mathbf{u}_{i}\right)-M_{ij}\left(\mathbf{u}_{ij}^{T}-\mathbf{u}_{i}\right)\right\} \label{eq:mom}\\
+\frac{D_{i}b_{i}}{Dt} & = & \nabla\cdot \left(\alpha_i \nabla b_{i}\right)+\frac{1}{\sigma_{i}}\sum_{j\ne i}\left\{ M_{ji}\left(b_{ji}^{T}-b_{i}\right)-M_{ij}\left(b_{ij}^{T}-b_{i}\right)\right\} \label{eq:b}\\
+\sum_{i}\nabla\cdot\sigma_{i}\mathbf{u}_{i} & = & 0\label{eq:divFree}\\
+\sum_{i}\sigma_{i} & = & 1.\label{eq:sumOne}
+\end{eqnarray}
+where $\sigma_i$, $\mathbf{u}_i$, $b_i$ and $P_i$ are the volume fraction, velocity, buoyancy and pressure of fluid $i$. Moist equations would also have transport equations for moisture in each fluid and latent a heating term in the buoyancy equation. $M_{ij}$ is the mass transfer rate from fluid $i$ to $j$ which is equivalent to entrainment, detrainment and cloud base mass flux. $\mathbf{u}_{ij}^T$ is the mean velocity of the fluid that is transferred from $i$ to $j$ and $b_{ij}^T$ is the mean buoyancy of the fluid that is transferred. The diffusion terms $\nabla\cdot\left( \nu_i\nabla\mathbf{u}_{i}\right)$ and $\nabla\cdot \left(\alpha_i \nabla b_{i}\right)$ are approximations of sub-filter-scale fluxes which occur because each fluid is not uniform at sub-grid-scales with $\nu_i$ and $\alpha_i$ being effective turbulent diffusivities.
+
+These equations can represent sub-grid-scale convection if, for example, fluid 0 is the stable environment, fluid 1 is buoyant convection and fluid 2 is downdrafts. In order to initialise a multi-fluid model, high resolution data must be divided into the separate fluids and then averaged onto the (coarser) model grid. This is conditional averaging. The same approach is needed to evaluate the multi-fluid model and to diagnose sub-filter-scale fluxes from high resolution data. Techniques such as the optimisation of resolved heat fluxes \cite[]{efstathiou2019b} can be used to conditionally average high resolution data.
+
+For the multi-fluid equations to represent sub-grid-scale convection, further closures are needed:
+\begin{itemize}
+\item Mass transfers between fluids, $M_{ij}$, to represent entrainment and detrainment.
+\item The mean buoyancy, moisture and momentum of the fluid that is transferred, $b_{ij}^T$, $q_{ij}^T$ and $\mathbf{u}_{ij}^T$. 
+\item Pressure differences between fluids.
+\item Turbulent diffusivities of buoyancy, moisture and momentum to represent sub-filter-scale fluxes for each fluid and their interactions. 
+\end{itemize}
+There are good starting points for each of these. Entrainment and detrainment rates from conventional parameterisations can be used. Mass transfers specific to single-column multi-fluid modelling have also been developed \cite[]{WMS20,TEB19}. The heat, moisture and momentum of the fluid transferred can be parameterised based on an assumed pdf of the donor fluid \cite[see][and the description in section \ref{sec:tools}]{McIn20}. \cite{WMS20} parameterised pressure differences between fluids based on divergence. Sub-filter-scale fluxes can be represented using down gradient transport via an eddy-viscosity or turbulent diffusivity that can be estimated using existing methods suitable for single fluids \cite[eg.][]{mellor1982}. We therefore have good starting points for closing the multi-fluid equations but none of these closures have been shown to work in the grey zone and simulations so far have all been single column thus neglecting interactions with large scales. 
+
+\section{Relationship with ParaCon}
+
+The poor state of convection parameterisation was the motivation for the \pounds 10M joint NERC, Met Office ParaCon project which aims to make a ``step change in our ability to predict weather and climate impacts'' by improving parameterisation suitable for existing dynamical cores. The constraint to retain existing dynamical cores means that direct coupling between parameterised convection and the continuity equation is not possible which means that parameterised convection cannot transport mass. This project will go further, creating a new dynamical core that will enable the necessary coupling. This project will exploit existing ParaCon outcomes:
+\begin{enumerate}
+\item The MONC LES model was developed and used to create simulations of convection archetypes. Simulations of the dry and convective boundary layer, BOMEX shallow cumuli over the tropical ocean \cite[]{HR73}, radiative-convective equilibrium (RCE), diurnal cycles of deep convection, the shallow cumulus ARM case \cite[]{BCC+02} and the transition from shallow to deep LBA case \cite[]{BFGB02} are available at multiple resolutions.
+
+\item High resolution simulations of two dimensional Rayleigh-B\'enard convection are available for a range of Rayleigh numbers.
+
+\item A method of partitioning the atmosphere into coherent thermal structures and their environment was developed \cite[]{ETB20} by maximising the heat that is transported by the mean velocity of each fluid.
+
+\item Multi-fluids was proposed as part of ParaCon but as the next generation rather than as a replacement for the existing Met Office convection scheme. Extensive testing was carried out in single-column mode \cite[]{TEB19,WMS20} assuming all the convection to be fully parameterised.
+
+\item A multi-fluid analogue of the Mellor-Yamada hierarchy was derived. It includes second-moment equations for each fluid type. All of the terms in the original Mellor-Yamada formulation have analogues in the multi-fluid version. In addition, the multi-fluid version includes new terms accounting for relabelling of fluid types (i.e.\ entrainment and detrainment), and also terms that account for subfilter-scale pressure fluctuations when we retain a single resolved-scale pressure $\overline{p}$ for all fluid types \citep{TWV+18}.
+
+\item Fully compressible multi-fluid models with simplified moist physics were developed. Reading developed MultiFluidAtmosFOAM using OpenFOAM enabling focus on the equations and algorithms rather than the spatial discretisation or parallelisation.
+
+\end{enumerate}
+
+The multi-fluid approach cannot be viewed as a stand-alone parameterisation that can be called from an existing dynamical core; it requires the bottom-up re-development of the model formulation. For this reason, the development of the multi-fluid approach was always expected to extend beyond the end of ParaCon. In this project we will build on the progress made under ParaCon in developing both the multi-fluid approach (basic formulation, stable numerical solutions, sub-grid closures, and proof-of-concept demonstrations) and the high-order turbulence approach by bringing them together.
+
+\section{Proposed Research}
+
+\subsection{Objectives}
+
+\begin{enumerate}
+\item\label{it:budgets} Calculate budgets of sub-filter-scale fluxes from LES data in order to diagnose the values of entrainment and detrainment and other closures.
+
+\item Create a three-dimensional multi-fluid model to represent under-resolved dry convection.
+
+\item Create a three-dimensional multi-fluid model to represent under-resolved moist convection.
+
+\item Combine multi-fluid and multi-moment modelling to develop a Mellor-Yamada multi-fluid model for turbulent convection.
+
+\item Evaluate and develop closures for the terms listed in section \ref{sec:mf} using the the techniques described in section \ref{sec:tools}.
+
+\item Evaluate using a hierarchy of convective cases from the Paracon project.
+
+\item Deliver an open access, parallel, three-dimensional multi-fluid model of the atmosphere with fluids for convective updraughts, downdraughts and the environment including two phases of water and solving prognostic equations for higher-order turbulent moments in all fluids.
+\end{enumerate}
+
+\subsection{Tools for Finding and Evaluating Closures}
+\label{sec:tools}
+
+These methods for finding and evaluating closures will be used during the work packages (\ref{sec:WPs}).
+
+\subsubsection*{Parameter Correlations}
+
+From the LES data we will calculate the parameters that make existing closures correct. If  parameters are constant or have a clear relationship with resolved variables then the closure may prove useful.
+
+\subsubsection*{Assumed Probability Distribution Functions (PDFs)}
+
+This approach was explored in the PhD thesis \cite{McIn20} supervised by Weller and can be used to find transfer terms. Mean and variances of properties of each fluid from multi-moment modelling imply that each fluid can be represented using a distribution such as a Gaussian. From the distribution it is possible to calculate the mass of fluid that crosses a threshold that defines the fluids. This implies a mass transfer (this is similar to transferring the tails of the distribution). The mean properties of the fluid transferred can also be calculated from the distribution. 
+
+\subsubsection*{Theory of Distribuions}
+\todo[inline]{Input needed}
+
+\subsubsection*{Asymptotics}
+
+Candidate closures will be used to simulate various idealised test cases and we will demand the following asymptotic behaviour:
+\begin{enumerate}
+\item If two fluids are initially identical with no sub-fluid variability, they should remain identical when mixed.
+\item  When convection is fully resolved, two fluids should evolve as one.
+\item\label{it:energyTransfer} Closures and numerical methods should not create energy and not create or destroy first moments of primitive variables.
+\item\label{it:boundedTransfer} Closures and numerical methods should not create unbounded values except where second-order moments provide sources for first-order moments.  Numerical methods to ensure \ref{it:energyTransfer} and \ref{it:boundedTransfer} were derived by \cite{MWH20}.
+\item At coarse resolution, a two-fluid model should be more accurate than a single-fluid model at the same resolution. By more accurate we mean that conditional averages are closer to a fully resovled single-fluid model.
+\item An initially empty fluid should not influence a non-empty fluid.
+\end{enumerate}
+Existing convection parameterisations do not have these properties which can lead to spurious solutions in the grey zone.
+
+Once a set of closures obeys the above constraints, we will evaluate by developing coarse resolution multi-fluid models of LES convection cases developed during Paracon. These will increase in complexity in order to maintain an unambiguous link between additional complexity and model fidelity. They will start as single column, then fully parameterised coarse resolution and finally partially resolved (grey zone). 
+
+\subsubsection*{The Relevance Vector Machine (RVM)}
+
+From the analysis of the LES (\ref{WP:LESbudgets} below) we will be able to calculate exactly the size but not the form of the closure needed to produce correct multi-fluid results. To apply the RVM we will also create a library of resolved variables which the specified subgrid term is conjectured to depend on. The RVM can then be used to discover which combination of resolved variables best reproduces the subgrid terms. This would provide physical insight into how the coherent structures of convection act, and to what extent that interaction can be universally represented.
+
+\subsection{Work Packages}
+\label{sec:WPs}
+
+\workPackage{LES Budgets (Efstathiou, Thuburn, McIntyre) \label{WP:LESbudgets}}
+
+We will carry out detailed diagnostics of the LES data created during ParaCon, computing complete budgets for all second-moment quantities for the cases of a single fluid, two fluids (updraft and environment), and, for LBA, three fluids (updraft, downdraft, and environment).
+We will decompose the flow into updrafts and their environment using the optimal decomposition developed during Paracon and extend this to diagnose coherent downdrafts. The budgets will be calculated for a range of horizontal filter scales, from a global horizontal average down to scales comparable to the cloud width and boundary layer depth. From the LES we can calculate the size but no form of the closures.
+
+\workPackage{Multi-fluid modelling of dry convection (Weller, Shipley) \label{WP:dryMF}}
+
+MutliFluidAtmosFOAM solves the multi-fluid dry Boussinesq equations in three dimensions. It includes pressure differences between fluids based on divergence and transfers between two fluids that are accurate for fully parameterised dry convection triggered by a hot surface \cite[]{WMS20}. It has a constant eddy viscosity and thermal diffusion. The next steps are to include a simple first-order closure for eddy viscosity and find closures suitable for partially resolved convection. An important aspect of our approach is to find closures within the simplest possible framework to avoid multiple competing influences contaminating the results. Hence we will ensure that the entrainment and detrainment and pressure differences between fluids are correctly modelled for dry convection. 
+
+An important aspect of multi-fluid modelling is that it enables net mass transport by convection. Rayleigh-B\'enard convection is horizontally homogeneous at large filter scales so there is not net horizontal mass transport. However when the convection is partially resolved (and the filter scales with the grid), the parameterised part of the flow will need to transport mass in the same way as the resolved flow. Important aspects of multi-fluid modelling can therefore be tested in this simple setting.
+
+\workPackage{Multi-fluid model of moist convection (Weller, McIntyre) \label{WP:moistMF}}
+
+In keeping with our strategy to keep the modelling as simple as possible while capturing important aspects of convection, the next step is to add moisture to the Boussinesq model and simulate Rainy-B\'enard convection \cite[]{WPS10,VPT19} which has known solutions and provides a link between Rayleigh-B\'enard convection and atmospheric convection. Rainy-B\'enard convection will be simulated at high resolution with a single fluid model to provide a reference for coarse resolution multi-fluid model. The results in \cite{VPT19} imply that the flow can be separated into saturated updrafts and unsaturated turbulent regions providing a simple criterion for conditional averaging the high resolution results. Hence entrainment and detrainment rates and pressure differences between fluids can be diagnosed from the reference simulation and additional closures in comparison to the dry case can be found. Closures will be found that work through the grey zone with the limiting cases of fully parameterised and fully resolved convection.
+
+Once closures have been developed for simplified microphysics in the Rainy-B\'enard setting, a more general model will be developed in order to tackle more complex cases from the heirarchy, feeding into the evaluation (\ref{WP:evaluate}). The generalisations include an anelasic or fully compressible equation set, more realistic microphysics, radiation and boundary layer modelling.
+
+\workPackage{Multi-moment, multi-fluid modelling of dry convection (Efstathiou, Thuburn, Shipley) \label{WP:YMdry}}
+
+The different levels of closure model proposed by Mellor and Yamada are based on neglecting transience, advection, and third-order turbulent transport in various second-moment equations. Using the budgets calculated in \ref{WP:LESbudgets}, we will test the validity of making analogous approximations for different numbers of fluids and for different filter scales, both in the boundary layer and in the cloud layer. The diagnosed distributions of third-order terms, pressure-correlation terms, and dissipation terms will be compared with the models proposed by Mellor and Yamada (and subsequent authors). The length scales required to optimise the multi-fluid Mellor-Yamada scheme will be compared for different filter scales and different numbers of fluids, paying particular attention to the grey zone. 
+
+The findings will inform the development of multi-moment modelling in MutliFluidAtmosFOAM. In keeping with the asymptotic approach, this model development will first be tested by simulating the cases used to calculate the budgets but at coarse and grey zone resolutions. We will also ensure that the addition of multi-moment modelling improves the parameterisaion of dry Rayleigh-B\'enard convection. 
+
+\workPackage{Multi-moment, multi-fluid modelling of moist convection (Efstathiou, Thuburn, Shipley) \label{WP:YMmoist}}
+
+Phase changes generate turbulence at all scales so this work package will entail more than putting all the parts together. Closures will be needed ......
+\todo[inline]{input needed}
+
+The model from this WP will feed into the evaluation (\ref{WP:evaluate}).
+
+\workPackage{Evaluation \label{WP:evaluate} (All)}
+
+The model development in \ref{WP:moistMF} and \ref{WP:YMmoist} will involve comparisons of multiFluidAtmosFOAM with LES data. The evaluation will use different test cases in order to test if the new model is predictive rather than a fit to LES. This will consist of a squall line over flat terrain \cite[]{FM06}. In order to test if we are doing better than a state of the art conventional parameterisation, we will compare with the idealised Met Office UM model at coarse resolution (run by Exeter and the Met Office, see letter of support) using the same simplified microphysics. Squall lines are known to be challenging for standard convection parameterisations \cite[e.g.][]{LCD+08} due to the lack of propagation of convection and the lack of mass transport by convection. We will evaluate sensitivity to resolution through the grey zone. 
+
+\workPackage{A community turbulent multi-fluids model \label{WP:model} (All)}
+
+MutliFluidAtmosFOAM will be developed and used throughout the project. All code with be versiona controlled and uploaded to \url{github.com} for sharing and as primary backup. The final code version will:
+\begin{enumerate}
+\item solve for one, two or three fluids;
+\item include prognostic equations for second moment of variables within each fluid;
+\item use Cartesian geometry and no orography;
+\item will include simplified radiation and moist physics, a simplified bottom boundary and no stratosphere;
+\item be parallelised using MPI.
+\end{enumerate}
+We will create documentation and a set of test cases for new users to run. A model description paper will be submitted to Geoscientific Model Development.
+
+\section{Potentials for Impact}
+
+If we are able to show that MutliFluidAtmosFOAM can represent convection more accurately than single-fluid models then future developments will create a more complete model that can be used for weather and climate prediction.
+
+Earlier opportunities for impact will come from our data analysis. The closures that we develop for the multi-fluid equations are likely to be useful for other parameterisations of convection. Collaboration with the Met Office will ensure that useful developments see early operational use. 
+
+\section{Management and Collaboration}
+
+We plan to work as one team across both institutions and will meet together online once a week rather than smaller single institution meetings. Meetings with Met Office will be held twice a year to discuss project progress and plans and to co-ordinate evaluation, comparing with the idealised UM (see letter of support from the Met Office).
+
+\section{Risks and Mitigations}
+
+Some of the risks associated with this proposal are generic to modelling; slow code development and uncertainties in the results. These risks are mitigated by the experience of the investigators and researchers and by the flexible and advanced code that has already been developed.
+
+There are some dependencies between work packages; the development and evaluation of closures relies on the LES analysis. However the theoretical work and the single-moment, multi-fluid model development can proceed without the results of the LES analysis. The evaluation relies on the model development work packages.
+
+Multi-fluid modelling cannot be retro-fitted to an existing model as is usually done with convection parameterisations. This means that a whole new model is needed in order to produce a multi-fluid model of convection. This is a big undertaking for operational centres so the biggest risk is that multi-fluid modelling will not be adopted by big modelling centres. We therefore plan to create models with enough functionality to be useful for independent research into convection and parameterisation.
+
+%\begin{multicols}{2}
+\bibliography{Weller,Thuburn,Shipley}
+\bibliographystyle{myNat}
+%\bibliographystyle{science}
+%\end{multicols}
+
+\end{document}

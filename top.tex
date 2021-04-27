@@ -1,0 +1,146 @@
+\usepackage{amsmath,amssymb,amsfonts,url}
+\usepackage{xcolor}
+\usepackage[margin=2cm]{geometry}
+\usepackage{pgfgantt}
+\newcommand\textganttbar[4]{%
+    \ganttbar{#1}{#3}{#4}
+    \ganttbar[inline]{#2}{#3}{#4}
+}
+
+% ----------------------------------------------------------------
+\vfuzz2pt % Don't report over-full v-boxes if over-edge is small
+\hfuzz2pt % Don't report over-full h-boxes if over-edge is small
+
+% Hilary's addition to make a compact article and use latex section commands
+% make list and enumerate more compact
+\usepackage{tweaklist}
+\renewcommand{\itemhook}
+{
+    \setlength{\topsep}{3pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}
+    \setlength{\partopsep}{0pt}
+    \setlength{\itemsep}{0pt}
+    \setlength{\labelwidth}{10pt}
+    \setlength{\leftmargin}{\labelwidth}
+}
+
+\renewcommand{\enumhook}
+{
+    \setlength{\topsep}{3pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}
+    \setlength{\partopsep}{0pt}
+    \setlength{\itemsep}{3pt}
+    \setlength{\labelwidth}{10pt}
+    \setlength{\leftmargin}{\labelwidth}
+}
+
+\renewcommand{\deschook}
+{
+    \setlength{\topsep}{3pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}
+    \setlength{\partopsep}{0pt}
+    \setlength{\itemsep}{0pt}
+    \setlength{\labelwidth}{0pt}
+    \setlength{\leftmargin}{\labelwidth}
+}
+
+% Compact sections and parts
+\makeatletter
+\def\@part[#1]#2
+{%
+    \refstepcounter{part}%
+    {%
+        \parindent \z@ \raggedright \interlinepenalty \@M
+        \normalfont \Large\bfseries\raggedright
+        \partname\nobreakspace\thepart : \nobreakspace #2 %\markboth{}{}\par
+    }%
+    \nobreak \vskip 1.3ex \@afterheading%
+}
+\renewcommand\section
+{%
+    \@startsection {section}{1}{\z@}{-1ex \@plus -0.5ex \@minus -.1ex}%
+   {0.5ex \@plus.1ex}{\large\bfseries\raggedright}%
+}
+\renewcommand\subsection%
+{%
+    \@startsection {subsection}{1}{\z@}{-1ex \@plus -0.5ex \@minus-.1ex}%
+   {0.5ex \@plus .1ex}{\normalfont\bfseries\raggedright}%
+}
+\renewcommand\subsubsection%
+{%
+    \@startsection {subsubsection}{1}{\z@}{-0.5ex \@plus -1ex \@minus -.2ex}%
+   {0.1ex \@plus .1ex}{\normalfont\bfseries\raggedright}%
+}
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+                                    {0.5ex \@plus0.5ex \@minus.1ex}%
+                                    {-0.5em}%
+                                    {\normalfont\normalsize\bfseries}}
+
+% subsubsections are actually work packages
+\renewcommand{\thesubsubsection}{WP\arabic{subsubsection}}% \hspace{-1em}}
+\newcommand\workPackage{\@startsection{subsubsection}{3}{\z@}%
+                       {-1ex \@plus -0.5ex \@minus -.1ex}%
+                       {0.5ex \@plus .1ex}{\normalfont\bf\raggedright}}
+
+\setcounter{secnumdepth}{5}
+
+% paragraphs are sub work packages
+\renewcommand{\theparagraph}{WP\arabic{subsubsection}\alph{paragraph}}%
+\newcommand\subworkPackage{\@startsection{paragraph}{4}{\z@}%
+                                    {0.5ex \@plus0.5ex \@minus.1ex}%
+                                    {-0.5em}%
+                                    {\normalfont\normalsize\bfseries}}
+
+\def\@maketitle
+{%
+  \begin{center}%
+  \let \footnote \thanks
+    {\large\bf \@title \par}%
+    \vskip 0.5em%
+    {\normalfont
+      \lineskip 1em%
+      \begin{tabular}[t]{c}%
+        \@author
+      \end{tabular}\par}%
+    \vskip 0.5em%
+    {\large \@date}%
+  \end{center}%
+  \par
+  %\vskip 1.5em
+}
+% Reduce the spacing around equations
+\AtBeginDocument{%
+ \abovedisplayskip=6pt plus 6pt minus 4pt
+ \belowdisplayskip=6pt plus 6pt minus 3pt
+ \abovedisplayshortskip=0pt plus 3pt
+ \belowdisplayshortskip=7pt plus 3pt minus 4pt
+}
+\setlength{\jot}{0pt}% Inter-equation spacing
+\makeatother
+
+% Bibliography stuff
+%\usepackage[square,sort&compress,numbers,super]{natbib}
+\usepackage[round,sort&compress]{natbib}
+%\usepackage[style=authoryear,citetracker,backref, backend=biber]{biblatex}
+
+\setlength{\bibsep}{0pt}
+\setlength{\bibhang}{6pt}
+
+% modification to natbib to remove margin
+\makeatletter
+\renewcommand\NAT@bibsetnum[1]{\settowidth\labelwidth{\@biblabel{#1}}%
+%   \setlength{\leftmargin}{\labelwidth}\addtolength{\leftmargin}{\labelsep}%
+   \setlength{\leftmargin}{0pt}\addtolength{\leftmargin}{0pt}%
+   \setlength{\itemsep}{\bibsep}\setlength{\parsep}{\z@}%
+   \setlength{\itemindent}{\bibindent}%
+   \ifNAT@openbib
+     \addtolength{\leftmargin}{\bibindent}%
+     \setlength{\itemindent}{-\bibindent}%
+     \setlength{\listparindent}{\itemindent}%
+     \setlength{\parsep}{0pt}%
+   \fi
+}
+\makeatother

@@ -1,0 +1,42 @@
+\documentclass[12pt]{article}
+
+% additional latex packages to use
+\usepackage[a4paper, width=170mm, top=22mm, bottom=22mm]{geometry}
+
+%%% BIBLIOGRAPHY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[backend=biber, bibencoding=utf8, style=authoryear, maxcitenames=2, uniquelist=false, sorting=nyt]{biblatex}   % bibliography; uniquelist=false means e.g. Siebesma et al. (2004) and Siebesma et al. (2007) do not have unique cite keys despite having different author lists 
+\addbibresource{danContrib.bib}   % get .bib file
+\ExecuteBibliographyOptions{url=false,doi=false,eprint=false,isbn=false,giveninits=true,uniquename=init}
+\renewcommand*{\bibfont}{\small}
+
+\AtEveryBibitem{
+    \clearfield{day}
+    \clearfield{month}
+}   % stop superfluous fields from appearing
+
+%%% FRONT MATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Contribution for 2021 NERC standard grant proposal}
+\author{Daniel Shipley}
+\date{\today}
+
+\begin{document}
+    
+\maketitle
+\section*{The brief}
+I have picked up on a phrase that you used in your theory paper: ``theory of distributions''. I would like to describe this as one of the methods that we will use in the proposal to find closures. Would you be able to write two things:
+\begin{enumerate}
+    \item A paragraph for the scientific background on the theory of distributions OR on the methods that you use in your theory paper to suggest closures.
+    \item A paragraph for a work package describing how you can find closures based on your theory paper.
+\end{enumerate}
+
+A name like ``theory of distributions'' or ``asymptotics'' is  useful when summarising our plans.
+\section{Background}
+Derivations of multi-fluid equations make use of discontinuous functions to label different regions of the underlying fluid \parencite{ar:Dopazo1977,ar:Yano2014,ar:ThuburnEtAl2018,ar:TanEtAl2018}. The terms requiring closure in such an approach then generally depend on derivatives of those discontinuous functions. The theory of distributions (or generalized functions) \parencite{bk:Schwartz_Distributions} allows for the definition and manipulation of such discontinuous functions and their derivatives. This can be used to derive exact integral expressions for the terms requiring closure, in particular the entrainment and detrainment terms, and the transferred fluid properties.
+
+\section{Work package}
+The theory of distributions allows for rigorous definition of transfer terms for mass, buoyancy, momentum, yielding exact integral representations for all of the terms requiring closure in a multi-fluid model. Once conditions are specified to split the flow into multiple fluids, these expressions can be used to compute the terms directly from LES data. We also plan to use these expressions to suggest possible closures for the unknown terms by consideration of simplified flows, and asymptotic approximations of evolution equations. For instance, the integrals can be calculated analytically for the first normal mode of Rayleigh-B\'{e}nard convection with one falling and one rising fluid \parencite{ar:ShipleyEtAl2021_inPrep}. More complex fluid definitions fit into this framework by consideration of the evolution equations for the conditions defining the fluids; for instance, for fluids defined by vertical heat flux, $wb - \kappa \frac{\partial b}{\partial z}$, the evolution equation for the heat flux directly enters the integral representation for the transfer terms. Known results for the interactions of convective coherent structures with boundary layers and a well-mixed environment (from both atmospheric convection and RBC) can be used to approximate the evolution equation and therefore approximate the integral expressions for the transfer terms in terms of resolved variables. Asymptotic methods for evaluating integrals are well-developed \parencite{bk:BenderOrszag}. This will lead to new physically-based closures for the entrainment and detrainment terms in a multi-fluid model. These can be added to the known and desired properties of closures (known: e.g. term-by-term Galileian invariance; retention of correct tensor properties -- e.g. symmetry \& bounds on norms; sum rules over all fluids; desired: asymptotic properties listed in section \textbf{ADD SEC.}) to provide strong constraints on potential closures.
+
+\printbibliography
+
+\end{document}
