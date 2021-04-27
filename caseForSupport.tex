@@ -95,7 +95,7 @@ The idea of two fluid partitions, each with simple univariate or bivariate Gauss
 
 Much work on parameterising turbulence in the atmosphere has focused on the boundary layer. Most relevant to this project is the \citet{mellor1973,mellor1974,mellor1982} hierarchy of turbulence closure models. The continuous governing equations were ensemble averaged and manipulated to obtain prognostic equations for all second-order moments such as turbulent kinetic energy (TKE) and sub-grid-scale heat fluxes. For this to work as part of a parameterisation of deep convection, the ensemble averaging would be needed within each fluid representing the convective plumes and their environment.
 
-As supercomputers increase in size, convection is better resolved over larger areas \cite[eg.][]{GC17}. Computers will never be big enough to fully resolve convection over the whole globe in weather predictions \cite[eg.][]{SSJ+19} so parameterisaiton will always be needed. There are terabytes of convection resolving simulations available that have not yet been fully analysed. In order to make sense of such large amounts of data, machine learning has been used to find relationships between behaviour that is sub-grid-scale with respect to a coarse model and variables that are resolved by the coarse model. Machine learning with neural networks has been used to improve the representation of sub-grid processes in ocean and atmosphere models, including convection parameterisation \cite[]{ogorman2018}. Neural networks may be able to discover processes from high resolution data that have not been observed. However, due to their lack of physical basis, there is concern that neural networks may not be able to extrapolate to new situations such as global warming and that they are effectively computational black boxes, and are therefore difficult to interpret. An alternative which would allow for finding closed-form parametrizations of unknown terms, is the relevance vector machine \cite[]{tipping2001}. This uses a sparse Bayesian regression to discover which combination of resolved variables best reproduces a desired subgrid term diagnosed from a high-resolution simulation. This results in a directly interpretable parameterisation which can be analysed for physical consistency. It has been used to suggest a successful scale-aware parametrization for ocean mesoscale eddies \cite[]{zanna2020}.
+As supercomputers increase in size, convection is better resolved over larger areas \cite[eg.][]{GC17}. Computers will never be big enough to fully resolve convection over the whole globe in weather predictions \cite[eg.][]{SSJ+19} so parameterisaiton will always be needed. In order to make sense of terabytes of convection resolving simulations, machine learning has been used to find relationships between behaviour that is sub-grid-scale with respect to a coarse model and variables that are resolved by the coarse model. Machine learning with neural networks may be able to discover processes from high resolution data that have not been observed \cite[eg.][]{ogorman2018}. However, due to their lack of physical basis, neural networks may not be able to extrapolate to new situations such as global warming. An alternative which enables finding closed-form parametrizations is the relevance vector machine \cite[]{tipping2001}. This uses a sparse Bayesian regression to discover which combination of resolved variables best reproduces a desired subgrid term diagnosed from a high-resolution simulation. This results in a directly interpretable parameterisationand has been used to suggest a successful scale-aware parametrization for ocean mesoscale eddies \cite[]{zanna2020}.
 
 \section{More detail on Multi-fluid Modelling of Convection}
 \label{sec:mf}
@@ -119,7 +119,9 @@ For the multi-fluid equations to represent sub-grid-scale convection, further cl
 \item Pressure differences between fluids.
 \item Turbulent diffusivities of buoyancy, moisture and momentum to represent sub-filter-scale fluxes for each fluid and their interactions. 
 \end{itemize}
-There are good starting points for each of these. Entrainment and detrainment rates from conventional parameterisations can be used. Mass transfers specific to single-column multi-fluid modelling have also been developed \cite[]{WMS20,TEB19}. The heat, moisture and momentum of the fluid transferred can be parameterised based on an assumed pdf of the donor fluid \cite[see][and the description in section \ref{sec:tools}]{McIn20}. \cite{WMS20} parameterised pressure differences between fluids based on divergence. Sub-filter-scale fluxes can be represented using down gradient transport via an eddy-viscosity or turbulent diffusivity that can be estimated using existing methods suitable for single fluids \cite[eg.][]{mellor1982}. We therefore have good starting points for closing the multi-fluid equations but none of these closures have been shown to work in the grey zone and simulations so far have all been single column thus neglecting interactions with large scales. 
+Entrainment and detrainment rates from conventional parameterisations can be used. Mass transfers specific to single-column multi-fluid modelling have also been developed \cite[]{WMS20,TEB19}. The heat, moisture and momentum of the fluid transferred can be parameterised based on an assumed pdf of the donor fluid \cite[see][and the description in section \ref{sec:tools}]{McIn20}. \cite{WMS20} parameterised pressure differences between fluids based on divergence. Sub-filter-scale fluxes can be represented using down gradient transport via an eddy-viscosity or turbulent diffusivity that can be estimated using existing methods suitable for single fluids \cite[eg.][]{mellor1982}. We therefore have good starting points for closing the multi-fluid equations but none of these closures have been shown to work in the grey zone and simulations so far have all been single column thus neglecting interactions with large scales. 
+
+Derivations of multi-fluid equations make use of discontinuous functions to label different regions of the underlying fluid \cite[]{Dopa77,TWV+18}. The terms requiring closure in such an approach depend on derivatives of those discontinuous functions. The theory of distributions (or generalized functions) \cite[]{Schw08} allows for the definition and manipulation of such discontinuous functions and their derivatives. This can be used to derive exact integral expressions for the terms requiring closure, in particular the entrainment and detrainment terms, and the transferred fluid properties.
 
 \section{Relationship with ParaCon}
 
@@ -131,7 +133,18 @@ The poor state of convection parameterisation was the motivation for the \pounds
 
 \item A method of partitioning the atmosphere into coherent thermal structures and their environment was developed \cite[]{ETB20} by maximising the heat that is transported by the mean velocity of each fluid.
 
-\item Multi-fluids was proposed as part of ParaCon but as the next generation rather than as a replacement for the existing Met Office convection scheme. Extensive testing was carried out in single-column mode \cite[]{TEB19,WMS20} assuming all the convection to be fully parameterised.
+\item A two-fluid, single column model was developed including moisture using a variety of entrainment/detrainment closures dependent on turbulent kinetic energy, vertical velocity convergence and atmospheric instability. This is able to reproduce the updraft area fraction ($\sigma_1$) and cloud properties of the ARM case \cite[]{BCC+02} (fig \ref{fig_clouds}). 
+
+\begin{figure}
+\begin{tabular}{cc}
+	\includegraphics[width=0.25\linewidth]{fromWill/04_Proposal_Exeter_Progress/updraftFraction_32.png}&
+	\includegraphics[width=0.73\linewidth]{fromWill/04_Proposal_Exeter_Progress/timeseries_cloud_height2.png}\\
+	$\sigma_1$ & Time (hours)
+\end{tabular}
+	\caption{Left: the updraft fraction from the large eddy simulation (solid) and the two-fluid single-column model (dashed) at nine hours.
+	Right: The boundary layer height (blue), cloud base (black) and cloud top (red) for the ARM test case. Large eddy simulation (solid) and two-fluid (dashed).}
+	\label{fig_clouds}
+\end{figure}
 
 \item A multi-fluid analogue of the Mellor-Yamada hierarchy was derived. It includes second-moment equations for each fluid type. All of the terms in the original Mellor-Yamada formulation have analogues in the multi-fluid version. In addition, the multi-fluid version includes new terms accounting for relabelling of fluid types (i.e.\ entrainment and detrainment), and also terms that account for subfilter-scale pressure fluctuations when we retain a single resolved-scale pressure $\overline{p}$ for all fluid types \citep{TWV+18}.
 
@@ -139,32 +152,34 @@ The poor state of convection parameterisation was the motivation for the \pounds
 
 \end{enumerate}
 
-The multi-fluid approach cannot be viewed as a stand-alone parameterisation that can be called from an existing dynamical core; it requires the bottom-up re-development of the model formulation. For this reason, the development of the multi-fluid approach was always expected to extend beyond the end of ParaCon. In this project we will build on the progress made under ParaCon in developing both the multi-fluid approach (basic formulation, stable numerical solutions, sub-grid closures, and proof-of-concept demonstrations) and the high-order turbulence approach by bringing them together.
+The multi-fluid approach is a technique to model convection across a range of scales rather than a stand-alone parameterisation that can be called from an existing dynamical core; it requires the bottom-up re-development of the model formulation. For this reason, the development of the multi-fluid approach was always expected to extend beyond the end of ParaCon. In this project we will build on the progress made under ParaCon in developing both the multi-fluid approach (basic formulation, stable numerical solutions, sub-grid closures, and proof-of-concept demonstrations) and the high-order turbulence approach by bringing them together.
 
 \section{Proposed Research}
 
 \subsection{Objectives}
 
+The over-arching aim is to create a three-dimensional multi-fluid model of the atmosphere which is accurate across a range of convection resolving to convection parameterising resolutions. This will be achieved via these specific objectives:
+
 \begin{enumerate}
+\item\label{it:model} Develop a flexible, three-dimensional multi-fluid, multi-moment model of the atmosphere including two phases of moisture. This initial objective does not include optimal closures or comprehensive interactions between moments and fluids.
+
 \item\label{it:budgets} Calculate budgets of sub-filter-scale fluxes from LES data in order to diagnose the values of entrainment and detrainment and other closures.
 
-\item Create a three-dimensional multi-fluid model to represent under-resolved dry convection.
+\item Find and test suitable closures so that the single-moment, multi-fluid model represents under-resolved dry convection accurately using the the techniques described in section \ref{sec:tools}.
 
-\item Create a three-dimensional multi-fluid model to represent under-resolved moist convection.
+\item Find and test test suitable closures so that the single-moment, multi-fluid model represents under-resolved moist convection accurately using the the techniques described in section \ref{sec:tools}. 
 
-\item Combine multi-fluid and multi-moment modelling to develop a Mellor-Yamada multi-fluid model for turbulent convection.
-
-\item Evaluate and develop closures for the terms listed in section \ref{sec:mf} using the the techniques described in section \ref{sec:tools}.
+\item Combine multi-fluid and multi-moment modelling to develop a Mellor-Yamada multi-fluid model for turbulent convection including consistent interactions between moments and fluids and closures for unknown correlations between moments.
 
 \item Evaluate using a hierarchy of convective cases from the Paracon project.
 
-\item Deliver an open access, parallel, three-dimensional multi-fluid model of the atmosphere with fluids for convective updraughts, downdraughts and the environment including two phases of water and solving prognostic equations for higher-order turbulent moments in all fluids.
+\item Deliver an open access, well documented, parallel, multi-fluid model of the atmosphere with well documented performance at representating convection across scales.
 \end{enumerate}
 
 \subsection{Tools for Finding and Evaluating Closures}
 \label{sec:tools}
 
-These methods for finding and evaluating closures will be used during the work packages (\ref{sec:WPs}).
+Good candidates exist for closing the multi-fluid, multi-moment equations. We have a toolkit for evaluating these closures and finding new ones if needed. We will pay particular attention to how relationships between sub-grid terms and resolved variables vary across scales. 
 
 \subsubsection*{Parameter Correlations}
 
@@ -175,13 +190,16 @@ From the LES data we will calculate the parameters that make existing closures c
 This approach was explored in the PhD thesis \cite{McIn20} supervised by Weller and can be used to find transfer terms. Mean and variances of properties of each fluid from multi-moment modelling imply that each fluid can be represented using a distribution such as a Gaussian. From the distribution it is possible to calculate the mass of fluid that crosses a threshold that defines the fluids. This implies a mass transfer (this is similar to transferring the tails of the distribution). The mean properties of the fluid transferred can also be calculated from the distribution. 
 
 \subsubsection*{Theory of Distribuions}
-\todo[inline]{Input needed}
+
+The theory of distributions allows for rigorous definition of transfer terms yielding exact integral representations for all of the terms requiring closure in a multi-fluid model. Once conditions are specified to split the flow into multiple fluids, these expressions can be used to compute the terms directly from LES data. We plan to use these expressions to suggest closures for the unknown terms by consideration of simplified flows, and asymptotic approximations of evolution equations. For instance, the integrals can be calculated analytically for the first normal mode of Rayleigh-B\'{e}nard convection  \cite[]{SWCM2x}.  This will lead to new physically-based closures for the entrainment and detrainment terms in a multi-fluid model. 
 
 \subsubsection*{Asymptotics}
 
-Candidate closures will be used to simulate various idealised test cases and we will demand the following asymptotic behaviour:
+Candidate closures will be used to simulate various idealised test cases and we will demand:
 \begin{enumerate}
+\item Term-by-term Galilean invariance.
 \item If two fluids are initially identical with no sub-fluid variability, they should remain identical when mixed.
+\item For any linear term of the multi-fluid equations, summing over all fluids should lead to the equivalent term of the original single-fluid equations.
 \item  When convection is fully resolved, two fluids should evolve as one.
 \item\label{it:energyTransfer} Closures and numerical methods should not create energy and not create or destroy first moments of primitive variables.
 \item\label{it:boundedTransfer} Closures and numerical methods should not create unbounded values except where second-order moments provide sources for first-order moments.  Numerical methods to ensure \ref{it:energyTransfer} and \ref{it:boundedTransfer} were derived by \cite{MWH20}.
@@ -199,10 +217,14 @@ From the analysis of the LES (\ref{WP:LESbudgets} below) we will be able to calc
 \subsection{Work Packages}
 \label{sec:WPs}
 
+\workPackage{Flexible Modelling Framework (Weller, Shipley) \label{WP:model0}}
+
+Using the OpenFOAM flexible modelling framework, we will build on the code developed during Paracon to create the core of multiFluidAtmosFOAM, a three-dimensional multi-fluid, multi-moment including moisture and some simple transfer terms and closures. This work will involve software testing and testing of exact properties such as conservation but will not involve any attempt to represent convection accurately. All code with be version controlled and uploaded to a public \url{github.com} repository. A model description paper will be submitted to Geoscientific Model Development. This model will be suitable for carrying out the research in the rest of the project. 
+
 \workPackage{LES Budgets (Efstathiou, Thuburn, McIntyre) \label{WP:LESbudgets}}
 
 We will carry out detailed diagnostics of the LES data created during ParaCon, computing complete budgets for all second-moment quantities for the cases of a single fluid, two fluids (updraft and environment), and, for LBA, three fluids (updraft, downdraft, and environment).
-We will decompose the flow into updrafts and their environment using the optimal decomposition developed during Paracon and extend this to diagnose coherent downdrafts. The budgets will be calculated for a range of horizontal filter scales, from a global horizontal average down to scales comparable to the cloud width and boundary layer depth. From the LES we can calculate the size but no form of the closures.
+We will decompose the flow into updrafts and their environment using the optimal decomposition developed during Paracon and extend this to diagnose coherent downdrafts. The budgets will be calculated for a range of horizontal filter scales, from a global horizontal average down to scales comparable to the cloud width and boundary layer depth. From the LES we can calculate the size but not the form of the closures.
 
 \workPackage{Multi-fluid modelling of dry convection (Weller, Shipley) \label{WP:dryMF}}
 
@@ -235,7 +257,7 @@ The model development in \ref{WP:moistMF} and \ref{WP:YMmoist} will involve comp
 
 \workPackage{A community turbulent multi-fluids model \label{WP:model} (All)}
 
-MutliFluidAtmosFOAM will be developed and used throughout the project. All code with be versiona controlled and uploaded to \url{github.com} for sharing and as primary backup. The final code version will:
+MutliFluidAtmosFOAM will be developed and used throughout the project. All code with be version controlled and uploaded to \url{github.com} for sharing and as primary backup. The final code version will:
 \begin{enumerate}
 \item solve for one, two or three fluids;
 \item include prognostic equations for second moment of variables within each fluid;
