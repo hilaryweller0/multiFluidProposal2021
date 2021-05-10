@@ -136,14 +136,9 @@ The poor state of convection parameterisation was the motivation for the \pounds
 \item A moist, two-fluid, single column model was developed using a variety of entrainment/detrainment closures dependent on turbulent kinetic energy, vertical velocity convergence and atmospheric instability. This is able to reproduce the updraft area fraction ($\sigma_1$) and cloud properties of the ARM case \cite[]{BCC+02} (fig \ref{fig:clouds}). 
 
 \begin{figure}
-\begin{tabular}{cc}
-	\includegraphics[width=0.24\linewidth]{fromWill/04_Proposal_Exeter_Progress/updraftFraction_32.png}&
-	\includegraphics[width=0.74\linewidth]{fromWill/04_Proposal_Exeter_Progress/timeseries_cloud_height2.png}\\
-	$\sigma_1$ & Time (hours)
-\end{tabular}
-	\caption{Left: the updraft fraction from the large eddy simulation (solid) and the two-fluid single-column model (dashed) at nine hours.
-	Right: The boundary layer height (blue), cloud base (black) and cloud top (red) for the ARM test case. Large eddy simulation (solid) and two-fluid (dashed).}
-	\label{fig:clouds}
+\includegraphics[width=\linewidth]{exeterScm.png}
+\caption{Left: the updraft fraction from the large eddy simulation (solid) and the two-fluid single-column model (dashed) at nine hours. Right: The cloud base (black) and cloud top (blue) for the ARM test case. Large eddy simulation (solid) and two-fluid (dashed).}
+\label{fig:clouds}
 \end{figure}
 
 \item A multi-fluid analogue of the Mellor-Yamada hierarchy was derived including second-moment equations for each fluid type. All of the terms in the original Mellor-Yamada formulation have analogues in the multi-fluid version. There are new terms accounting for relabelling of fluid types (i.e.\ entrainment and detrainment) and  terms that account for sub-grid-scale pressure fluctuations.
