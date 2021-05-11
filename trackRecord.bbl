@@ -1,0 +1,251 @@
+\begin{thebibliography}{58}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+%\bibitem[Betts et~al.(2002)Betts, Fuentes, Garstang, and Ball]{BFGB02}
+%A.~Betts, J.~Fuentes, M.~Garstang, and J.~Ball.
+%\newblock \emph{J. Geophys. Res. - Atmos.}, 107\penalty0 (D20):\penalty0 LBA
+%  32--1--LBA 32--14, 2002.
+
+%\bibitem[Brown et~al.(2002)Brown, Cederwall, Chlond, Duynkerke, Golaz,
+%  Khairoutdinov, Lewellen, Lock, MacVean, Moeng, Neggers, Siebesma, and
+%  Stevens]{BCC+02}
+%A.~Brown, R.~Cederwall, A.~Chlond, P.~Duynkerke, J.-C. Golaz, M.~Khairoutdinov,
+%  D.~Lewellen, A.~Lock, M.~MacVean, C.-H. Moeng, R.~Neggers, A.~Siebesma, and
+%  B.~Stevens.
+%\newblock \emph{Quart. J. Roy. Meteor. Soc.}, 128\penalty0 (582):\penalty0
+%  1075--1093, 2002.
+
+\bibitem[Chen et~al.(2017)Chen, Weller, Pring, and Shaw]{CWPS17}
+Y.~Chen, H.~Weller, S.~Pring, and J.~Shaw.
+\newblock \emph{Quart. J. Roy. Meteor. Soc.}, 143\penalty0 (708):\penalty0
+  2764--2779, 2017.
+
+%\bibitem[Dopazo(1977)]{Dopa77}
+%C.~Dopazo.
+%\newblock \emph{J. Fluid Mechanics}, 81:\penalty0 433--438, 7 1977.
+
+\bibitem[Efstathiou and Beare(2015)]{efstathiou2015}
+G.~Efstathiou and R.~Beare.
+\newblock \emph{Quart. J. Roy. Meteor. Soc.}, 141:\penalty0 3006--3017, 2015.
+
+\bibitem[Efstathiou and Plant(2019)]{efstathiou2019a}
+G.~Efstathiou and R.~Plant.
+\newblock \emph{Quart. J. Roy. Meteor. Soc.}, 145:\penalty0 884--892, 2019.
+
+\bibitem[Efstathiou et~al.(2016)Efstathiou, Beare, S.Osborne, and
+  Lock]{efstathiou2016}
+G.~Efstathiou, R.~Beare, S.Osborne, and A.~Lock.
+\newblock \emph{J. Geophys. Res. - Atmos.}, 121:\penalty0 4769--4782, 2016.
+
+\bibitem[Efstathiou et~al.(2020)Efstathiou, Thuburn, and Beare]{ETB20}
+G.~Efstathiou, J.~Thuburn, and R.~Beare.
+\newblock \emph{Boundary-Layer Meteorol.}, 174:\penalty0 119--144, 2020.
+
+\bibitem[Efstathiou et~al.(2018)Efstathiou, Plant, and Bopape]{efstathiou2018}
+G.~A. Efstathiou, R.~S. Plant, and M.~M. Bopape.
+\newblock \emph{J. Appl. Meteor. Climatol.}, 57:\penalty0 2197--2214, 2018.
+
+%\bibitem[Frame and Markowski(2006)]{FM06}
+%J.~Frame and P.~Markowski.
+%\newblock \emph{Mon. Wea. Rev.}, 134\penalty0 (7):\penalty0 1919--1941, 2006.
+
+%\bibitem[Gerard and Geleyn(2005)]{GG05}
+%L.~Gerard and J.-F. Geleyn.
+%\newblock \emph{Quart. J. Roy. Meteor. Soc.}, 131:\penalty0 2293--2312, 2005.
+
+%\bibitem[Golaz et~al.(2002)Golaz, Larson, and Cotton]{GLC02}
+%J.-C. Golaz, V.~Larson, and W.~Cotton.
+%\newblock \emph{J. of Atmos Sci.}, 59\penalty0 (24):\penalty0 3540--3551, 2002.
+
+%\bibitem[Gregory and Rowntree(1990)]{GR90}
+%D.~Gregory and P.~Rowntree.
+%\newblock \emph{Mon. Wea. Rev.}, 118:\penalty0 1483--1506, 1990.
+
+%\bibitem[Guichard and Couvreux(2017)]{GC17}
+%F.~Guichard and F.~Couvreux.
+%\newblock \emph{Tellus A}, 69\penalty0 (1):\penalty0 1373578, 2017.
+
+\bibitem[Holdaway et~al.(2013)Holdaway, Thuburn, and Wood]{HTW13a}
+D.~Holdaway, J.~Thuburn, and N.~Wood.
+\newblock \emph{Quart. J. Roy. Meteor. Soc.}, 139, 2013.
+
+%\bibitem[Holland and Rasmusson(1973)]{HR73}
+%J.~Holland and E.~Rasmusson.
+%\newblock \emph{Mon. Wea. Rev.}, 101\penalty0 (1):\penalty0 44--55, 1973.
+
+\bibitem[Holloway and Co-authors(2014)]{HPB+14}
+C.~Holloway and Co-authors.
+\newblock \emph{Atmos. Sci. Lett.}, 15\penalty0 (4):\penalty0 348--353, 2014.
+
+%\bibitem[Kuell and Bott(2008)]{KB08}
+%V.~Kuell and A.~Bott.
+%\newblock \emph{Meteorologische Zeitschrift}, 17\penalty0 (6):\penalty0
+%  775--783, 2008.
+
+%\bibitem[Lean et~al.(2008)Lean, Clark, Dixon, Roberts, Fitch, Forbes, and
+%  Halliwell]{LCD+08}
+%H.~Lean, P.~Clark, M.~Dixon, N.~Roberts, A.~Fitch, R.~Forbes, and C.~Halliwell.
+%\newblock \emph{Mon. Wea. Rev.}, 136:\penalty0 3408--3424, 2008.
+
+\bibitem[Lloyd et~al.(2009)Lloyd, Guilyardi, Weller, and Slingo]{LGWS09}
+J.~Lloyd, E.~Guilyardi, H.~Weller, and J.~Slingo.
+\newblock \emph{Atmos. Sci. Lett.}, 10\penalty0 (3):\penalty0 170--176, 2009.
+
+%\bibitem[Malardel and Bechtold(2019)]{MB19}
+%S.~Malardel and P.~Bechtold.
+%\newblock \emph{Quart. J. Roy. Meteor. Soc.}, 0\penalty0 (ja), 2019.
+
+%\bibitem[McIntyre(2020)]{McIn20}
+%W.~McIntyre.
+%\newblock PhD thesis, Department of Meteorology, University of Reading, 2020.
+
+\bibitem[McIntyre et~al.(2020)McIntyre, Weller, and Holloway]{MWH20}
+W.~McIntyre, H.~Weller, and C.~Holloway.
+\newblock \emph{Quart. J. Roy. Meteor. Soc.}, 146\penalty0 (728):\penalty0
+  1106--1120, 2020.
+
+%\bibitem[Mellor(1973)]{mellor1973}
+%G.~L. Mellor.
+%\newblock \emph{J. of Atmos Sci.}, 30:\penalty0 1061--1069, 1973.
+
+%\bibitem[Mellor and Yamada(1974)]{mellor1974}
+%G.~L. Mellor and T.~Yamada.
+%\newblock \emph{J. of Atmos Sci.}, 31:\penalty0 1791--1806, 1974.
+
+%\bibitem[Mellor and Yamada(1982)]{mellor1982}
+%G.~L. Mellor and T.~Yamada.
+%\newblock \emph{Rev.\ Geophys.\ Space Phys.}, 20:\penalty0 851--875, 1982.
+
+%\bibitem[O'Gorman and Dwyer(2018)]{ogorman2018}
+%P.~A. O'Gorman and J.~G. Dwyer.
+%\newblock \emph{Journal of Advances in Modeling Earth Systems}, 10\penalty0
+%  (10):\penalty0 2548--2563, 2018.
+
+%\bibitem[Pan and Randall(1998)]{PR98}
+%D.-M. Pan and D.~Randall.
+%\newblock \emph{Quart. J. Roy. Meteor. Soc.}, 124\penalty0 (547):\penalty0
+%  949--981, 1998.
+
+%\bibitem[Park(2014)]{Par14}
+%S.~Park.
+%\newblock \emph{J. of Atmos Sci.}, 71\penalty0 (11):\penalty0 3902--3930, 2014.
+
+%\bibitem[Plant and Craig(2008)]{PC08}
+%R.~Plant and G.~Craig.
+%\newblock \emph{J. of Atmos Sci.}, 65:\penalty0 87--105, 2008.
+
+%\bibitem[Plant and Yano(2015)]{PY15}
+%R.~Plant and J.-I. Yano.
+%\newblock \emph{Parameterization of Atmospheric Convection}.
+%\newblock Imperial College Press, 2015.
+
+%\bibitem[Satoh et~al.(2019)Satoh, Stevens, Judt, Khairoutdinov, Lin, Putman,
+%  and D\"uben]{SSJ+19}
+%M.~Satoh, B.~Stevens, F.~Judt, M.~Khairoutdinov, S.-J. Lin, W.~Putman, and
+%  P.~D\"uben.
+%\newblock \emph{Current Climate Change Reports}, 5:\penalty0 172--184, 2019.
+
+%\bibitem[Schwartz(2008)]{Schw08}
+%L.~Schwartz.
+%\newblock \emph{Mathematics for the Physical Sciences}.
+%\newblock Dover Publications, 2008.
+
+\bibitem[Shaw et~al.(2017)Shaw, Weller, Methven, and Davies]{SWMD17}
+J.~Shaw, H.~Weller, J.~Methven, and T.~Davies.
+\newblock \emph{J. Comput. Phys.}, 344:\penalty0 86--107, 2017.
+
+%\bibitem[Sherwood et~al.(2013)Sherwood, Alexander, Brown, McFarlane, Gerber,
+%  Feingold, Scaife, and Grabowski]{SAB+13}
+%S.~Sherwood, M.~Alexander, A.~Brown, N.~McFarlane, E.~Gerber, G.~Feingold,
+%  A.~Scaife, and W.~Grabowski.
+%\newblock \emph{{Climate Science for Serving Society}}, chapter Climate
+%  Processes: Clouds, Aerosols and Dynamics.
+%\newblock Springer, Dordrecht, 2013.
+
+%\bibitem[Shipley et~al.(2021)Shipley, Weller, Clark, and McIntyre]{SWCM2x}
+%D.~Shipley, H.~Weller, P.~Clark, and W.~McIntyre.
+%\newblock \emph{Quart. J. Roy. Meteor. Soc.}, 2021.
+%\newblock in prep.
+
+%\bibitem[Tan et~al.(2018)Tan, Kaul, Pressel, Cohen, Schneider, and
+%  Teixeira]{TKP+18}
+%Z.~Tan, C.~Kaul, K.~Pressel, Y.~Cohen, T.~Schneider, and J.~Teixeira.
+%\newblock \emph{J. Advances in Modeling Earth Systems}, 10\penalty0
+%  (3):\penalty0 770--800, 2018.
+
+\bibitem[Thuburn and Cotter(2015)]{TC15}
+J.~Thuburn and C.~Cotter.
+\newblock \emph{J. Comput. Phys.}, 2015.
+
+\bibitem[Thuburn and Vallis(2018)]{TV18}
+J.~Thuburn and G.~Vallis.
+\newblock \emph{Quart. J. Roy. Meteor. Soc.}, 144\penalty0 (714):\penalty0
+  1555--1571, 2018.
+
+\bibitem[Thuburn et~al.(2014)Thuburn, Kent, and Wood]{TKW14}
+J.~Thuburn, J.~Kent, and N.~Wood.
+\newblock \emph{Quart. J. Roy. Meteor. Soc.}, 2014.
+
+\bibitem[Thuburn et~al.(2018)Thuburn, Weller, Vallis, Beare, and
+  Whitall]{TWV+18}
+J.~Thuburn, H.~Weller, G.~Vallis, R.~Beare, and M.~Whitall.
+\newblock \emph{J. of Atmos Sci.}, 75\penalty0 (3):\penalty0 965--981, 2018.
+
+\bibitem[Thuburn et~al.(2019)Thuburn, Efstathiou, and Beare]{TEB19}
+J.~Thuburn, G.~Efstathiou, and R.~Beare.
+\newblock \emph{Quart. J. Roy. Meteor. Soc.}, 145\penalty0 (721):\penalty0
+  1535--1550, 2019.
+
+%\bibitem[Tiedtke(1989)]{Tied89}
+%M.~Tiedtke.
+%\newblock \emph{Mon. Wea. Rev.}, 117\penalty0 (8):\penalty0 1779--1800, 1989.
+
+%\bibitem[Tipping(2001)]{tipping2001}
+%M.~E. Tipping.
+%\newblock \emph{Journal of machine learning research}, 1:\penalty0 211--244,
+%  2001.
+
+\bibitem[Weller(2012)]{Wel12}
+H.~Weller.
+\newblock \emph{Mon. Wea. Rev.}, 140\penalty0 (10):\penalty0 3220--3234, 2012.
+
+\bibitem[Weller and McIntyre(2019)]{WM19}
+H.~Weller and W.~McIntyre.
+\newblock \emph{Quart. J. Roy. Meteor. Soc.}, 145\penalty0 (721):\penalty0
+  1337--1353, 2019.
+
+\bibitem[Weller and Shahrokhi(2014)]{WS14}
+H.~Weller and A.~Shahrokhi.
+\newblock \emph{Mon. Wea. Rev.}, 142\penalty0 (12):\penalty0 4439--4457, 2014.
+
+\bibitem[Weller et~al.(2009)Weller, Weller, and Fournier]{WWF09}
+H.~Weller, H.~Weller, and A.~Fournier.
+\newblock \emph{Mon. Wea. Rev.}, 137\penalty0 (12):\penalty0 4208--4224, 2009.
+
+\bibitem[Weller et~al.(2012)Weller, Thuburn, and Cotter]{WTC12}
+H.~Weller, J.~Thuburn, and C.~Cotter.
+\newblock \emph{Mon. Wea. Rev.}, 140\penalty0 (8):\penalty0 2734--2755, 2012.
+
+\bibitem[Weller et~al.(2013)Weller, Lock, and Wood]{WLW13}
+H.~Weller, S.-J. Lock, and N.~Wood.
+\newblock \emph{J. Comput. Phys.}, 252:\penalty0 365--381, 2013.
+
+\bibitem[Weller et~al.(2020)Weller, McIntyre, and Shipley]{WMS20}
+H.~Weller, W.~McIntyre, and D.~Shipley.
+\newblock \emph{J. Advances in Modeling Earth Systems}, 12\penalty0 (8), 2020.
+
+\bibitem[Wood et~al.(2014)Wood, Staniforth, White, Allen, Diamantakis, Gross,
+  Melvin, Smith, Vosper, Zerroukat, and Thuburn]{WSW+14}
+N.~Wood, A.~Staniforth, A.~White, T.~Allen, M.~Diamantakis, M.~Gross,
+  T.~Melvin, C.~Smith, S.~Vosper, M.~Zerroukat, and J.~Thuburn.
+\newblock \emph{Quart. J. Roy. Meteor. Soc.}, 140:\penalty0 1505--1520, 2014.
+
+%\bibitem[Zanna and Bolton(2020)]{zanna2020}
+%L.~Zanna and T.~Bolton.
+%\newblock \emph{Geophysical Research Letters}, 47\penalty0 (17), 2020.
+
+\end{thebibliography}
