@@ -1,0 +1,14 @@
+the RCE case is already included in WP 6 and we can add the LBA there that has already been mentioned in the proposal
+
+Sent from my iPad
+
+> On 27 May 2021, at 21:47, Hilary Weller <h.weller@reading.ac.uk> wrote:
+>
+> ﻿
+> CAUTION: This email originated from outside of the organisation. Do not click links or open attachments unless you recognise the sender and know the content is safe.
+>
+> Thanks George
+>
+> What can I put in the proposal about the deep convection LES that we will compare with? Does it need a new work package? 
+>
+

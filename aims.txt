@@ -1,0 +1,8 @@
+It should have three essential, minimum properties:
+
+\begin{enumerate}\renewcommand{\theenumi}{\alph{enumi}}
+\item When convection is well resolved, the solutions are identical to a single fluid model.
+\item When convection is fully sub-grid, the solutions are at least as accurate as a dynamical core with a conventional parameterisation.
+\item When convection is partially resolved, the solutions are more accurate than a single-fluid model with no parameterisation and more accurate than the multi-fluid model at coarse resolution.
+\end{enumerate}
+

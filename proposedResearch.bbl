@@ -1,4 +1,4 @@
-\begin{thebibliography}{58}
+\begin{thebibliography}{43}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -23,10 +23,6 @@ A.~Brown, R.~Cederwall, A.~Chlond, P.~Duynkerke, J.-C. Golaz, M.~Khairoutdinov,
 %Y.~Chen, H.~Weller, S.~Pring, and J.~Shaw.
 %\newblock \emph{Quart. J. Roy. Meteor. Soc.}, 143\penalty0 (708):\penalty0
 %  2764--2779, 2017.
-
-\bibitem[Dopazo(1977)]{Dopa77}
-C.~Dopazo.
-\newblock \emph{J. Fluid Mechanics}, 81:\penalty0 433--438, 7 1977.
 
 %\bibitem[Efstathiou and Beare(2015)]{efstathiou2015}
 %G.~Efstathiou and R.~Beare.
@@ -57,10 +53,6 @@ J.~Frame and P.~Markowski.
 L.~Gerard and J.-F. Geleyn.
 \newblock \emph{Quart. J. Roy. Meteor. Soc.}, 131:\penalty0 2293--2312, 2005.
 
-\bibitem[Golaz et~al.(2002)Golaz, Larson, and Cotton]{GLC02}
-J.-C. Golaz, V.~Larson, and W.~Cotton.
-\newblock \emph{J. of Atmos Sci.}, 59\penalty0 (24):\penalty0 3540--3551, 2002.
-
 \bibitem[Gregory and Rowntree(1990)]{GR90}
 D.~Gregory and P.~Rowntree.
 \newblock \emph{Mon. Wea. Rev.}, 118:\penalty0 1483--1506, 1990.
@@ -68,10 +60,6 @@ D.~Gregory and P.~Rowntree.
 \bibitem[Guichard and Couvreux(2017)]{GC17}
 F.~Guichard and F.~Couvreux.
 \newblock \emph{Tellus A}, 69\penalty0 (1):\penalty0 1373578, 2017.
-
-%\bibitem[Holdaway et~al.(2013)Holdaway, Thuburn, and Wood]{HTW13a}
-%D.~Holdaway, J.~Thuburn, and N.~Wood.
-%\newblock \emph{Quart. J. Roy. Meteor. Soc.}, 139, 2013.
 
 \bibitem[Holland and Rasmusson(1973)]{HR73}
 J.~Holland and E.~Rasmusson.
@@ -81,11 +69,6 @@ J.~Holland and E.~Rasmusson.
 %C.~Holloway and Co-authors.
 %\newblock \emph{Atmos. Sci. Lett.}, 15\penalty0 (4):\penalty0 348--353, 2014.
 
-\bibitem[Kuell and Bott(2008)]{KB08}
-V.~Kuell and A.~Bott.
-\newblock \emph{Meteorologische Zeitschrift}, 17\penalty0 (6):\penalty0
-  775--783, 2008.
-
 \bibitem[Lean et~al.(2008)Lean, Clark, Dixon, Roberts, Fitch, Forbes, and
   Halliwell]{LCD+08}
 H.~Lean, P.~Clark, M.~Dixon, N.~Roberts, A.~Fitch, R.~Forbes, and C.~Halliwell.
@@ -94,10 +77,6 @@ H.~Lean, P.~Clark, M.~Dixon, N.~Roberts, A.~Fitch, R.~Forbes, and C.~Halliwell.
 %\bibitem[Lloyd et~al.(2009)Lloyd, Guilyardi, Weller, and Slingo]{LGWS09}
 %J.~Lloyd, E.~Guilyardi, H.~Weller, and J.~Slingo.
 %\newblock \emph{Atmos. Sci. Lett.}, 10\penalty0 (3):\penalty0 170--176, 2009.
-
-\bibitem[Malardel and Bechtold(2019)]{MB19}
-S.~Malardel and P.~Bechtold.
-\newblock \emph{Quart. J. Roy. Meteor. Soc.}, 0\penalty0 (ja), 2019.
 
 \bibitem[McIntyre(2020)]{McIn20}
 W.~McIntyre.
@@ -120,10 +99,11 @@ G.~L. Mellor and T.~Yamada.
 G.~L. Mellor and T.~Yamada.
 \newblock \emph{Rev.\ Geophys.\ Space Phys.}, 20:\penalty0 851--875, 1982.
 
-\bibitem[O'Gorman and Dwyer(2018)]{ogorman2018}
-P.~A. O'Gorman and J.~G. Dwyer.
-\newblock \emph{Journal of Advances in Modeling Earth Systems}, 10\penalty0
-  (10):\penalty0 2548--2563, 2018.
+%\bibitem[Melvin et~al.(2019)Melvin, Benacchio, Shipway, Wood, Thuburn, and
+%  Cotter]{MBS+19}
+%T.~Melvin, T.~Benacchio, B.~Shipway, N.~Wood, J.~Thuburn, and C.~Cotter.
+%\newblock \emph{Quart. J. Roy. Meteor. Soc.}, 145\penalty0 (724):\penalty0
+%  2835--2853, 2019.
 
 \bibitem[Pan and Randall(1998)]{PR98}
 D.-M. Pan and D.~Randall.
@@ -177,18 +157,10 @@ Z.~Tan, C.~Kaul, K.~Pressel, Y.~Cohen, T.~Schneider, and J.~Teixeira.
 \newblock \emph{J. Advances in Modeling Earth Systems}, 10\penalty0
   (3):\penalty0 770--800, 2018.
 
-%\bibitem[Thuburn and Cotter(2015)]{TC15}
-%J.~Thuburn and C.~Cotter.
-%\newblock \emph{J. Comput. Phys.}, 2015.
-
 %\bibitem[Thuburn and Vallis(2018)]{TV18}
 %J.~Thuburn and G.~Vallis.
 %\newblock \emph{Quart. J. Roy. Meteor. Soc.}, 144\penalty0 (714):\penalty0
 %  1555--1571, 2018.
-
-%\bibitem[Thuburn et~al.(2014)Thuburn, Kent, and Wood]{TKW14}
-%J.~Thuburn, J.~Kent, and N.~Wood.
-%\newblock \emph{Quart. J. Roy. Meteor. Soc.}, 2014.
 
 %\bibitem[Thuburn et~al.(2018)Thuburn, Weller, Vallis, Beare, and
 %  Whitall]{TWV+18}
@@ -203,11 +175,6 @@ Z.~Tan, C.~Kaul, K.~Pressel, Y.~Cohen, T.~Schneider, and J.~Teixeira.
 \bibitem[Tiedtke(1989)]{Tied89}
 M.~Tiedtke.
 \newblock \emph{Mon. Wea. Rev.}, 117\penalty0 (8):\penalty0 1779--1800, 1989.
-
-\bibitem[Tipping(2001)]{tipping2001}
-M.~E. Tipping.
-\newblock \emph{Journal of machine learning research}, 1:\penalty0 211--244,
-  2001.
 
 %\bibitem[Weller(2012)]{Wel12}
 %H.~Weller.
@@ -226,10 +193,6 @@ M.~E. Tipping.
 %H.~Weller and A.~Shahrokhi.
 %\newblock \emph{Mon. Wea. Rev.}, 142\penalty0 (12):\penalty0 4439--4457, 2014.
 
-%\bibitem[Weller et~al.(2009)Weller, Weller, and Fournier]{WWF09}
-%H.~Weller, H.~Weller, and A.~Fournier.
-%\newblock \emph{Mon. Wea. Rev.}, 137\penalty0 (12):\penalty0 4208--4224, 2009.
-
 %\bibitem[Weller et~al.(2012)Weller, Thuburn, and Cotter]{WTC12}
 %H.~Weller, J.~Thuburn, and C.~Cotter.
 %\newblock \emph{Mon. Wea. Rev.}, 140\penalty0 (8):\penalty0 2734--2755, 2012.
@@ -243,9 +206,5 @@ M.~E. Tipping.
 %N.~Wood, A.~Staniforth, A.~White, T.~Allen, M.~Diamantakis, M.~Gross,
 %  T.~Melvin, C.~Smith, S.~Vosper, M.~Zerroukat, and J.~Thuburn.
 %\newblock \emph{Quart. J. Roy. Meteor. Soc.}, 140:\penalty0 1505--1520, 2014.
-
-\bibitem[Zanna and Bolton(2020)]{zanna2020}
-L.~Zanna and T.~Bolton.
-\newblock \emph{Geophysical Research Letters}, 47\penalty0 (17), 2020.
 
 \end{thebibliography}

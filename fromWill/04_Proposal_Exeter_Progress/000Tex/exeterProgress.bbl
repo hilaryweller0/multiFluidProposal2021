@@ -1,0 +1,39 @@
+\begin{thebibliography}{4}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Angevine et~al.(2010)Angevine, Jiang, and Mauritsen]{angevine2010}
+W.~M. Angevine, H.~Jiang, and T.~Mauritsen.
+\newblock Performance of an eddy diffusivity--mass flux scheme for shallow
+  cumulus boundary layers.
+\newblock \emph{Monthly Weather Review}, 138\penalty0 (7):\penalty0 2895--2912,
+  2010.
+
+\bibitem[Brown et~al.(2002)Brown, Cederwall, Chlond, Duynkerke, Golaz,
+  Khairoutdinov, Lewellen, Lock, MacVean, Moeng, et~al.]{brown2002}
+A.~Brown, R.~Cederwall, A.~Chlond, P.~Duynkerke, J.-C. Golaz, M.~Khairoutdinov,
+  D.~Lewellen, A.~Lock, M.~MacVean, C.-H. Moeng, et~al.
+\newblock Large-eddy simulation of the diurnal cycle of shallow cumulus
+  convection over land.
+\newblock \emph{Quarterly Journal of the Royal Meteorological Society: A
+  journal of the atmospheric sciences, applied meteorology and physical
+  oceanography}, 128\penalty0 (582):\penalty0 1075--1093, 2002.
+
+\bibitem[Efstathiou et~al.(2019)Efstathiou, Thuburn, and Beare]{efstathiou2019}
+G.~A. Efstathiou, J.~Thuburn, and R.~J. Beare.
+\newblock Diagnosing coherent structures in the convective boundary layer by
+  optimizing their vertical turbulent scalar transfer.
+\newblock \emph{Boundary-Layer Meteorology}, pages 1--26, 2019.
+
+\bibitem[Neggers et~al.(2004)Neggers, Siebesma, Lenderink, and
+  Holtslag]{neggers2004}
+R.~Neggers, A.~Siebesma, G.~Lenderink, and A.~Holtslag.
+\newblock An evaluation of mass flux closures for diurnal cycles of shallow
+  cumulus.
+\newblock \emph{Monthly weather review}, 132\penalty0 (11):\penalty0
+  2525--2538, 2004.
+
+\end{thebibliography}
