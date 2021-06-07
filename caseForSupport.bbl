@@ -1,4 +1,4 @@
-\begin{thebibliography}{43}
+\begin{thebibliography}{41}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -52,10 +52,6 @@ J.~Frame and P.~Markowski.
 \bibitem[Gerard and Geleyn(2005)]{GG05}
 L.~Gerard and J.-F. Geleyn.
 \newblock \emph{Quart. J. Roy. Meteor. Soc.}, 131:\penalty0 2293--2312, 2005.
-
-\bibitem[Gregory and Rowntree(1990)]{GR90}
-D.~Gregory and P.~Rowntree.
-\newblock \emph{Mon. Wea. Rev.}, 118:\penalty0 1483--1506, 1990.
 
 \bibitem[Guichard and Couvreux(2017)]{GC17}
 F.~Guichard and F.~Couvreux.
@@ -171,10 +167,6 @@ J.~Thuburn, H.~Weller, G.~Vallis, R.~Beare, and M.~Whitall.
 J.~Thuburn, G.~Efstathiou, and R.~Beare.
 \newblock \emph{Quart. J. Roy. Meteor. Soc.}, 145\penalty0 (721):\penalty0
   1535--1550, 2019.
-
-\bibitem[Tiedtke(1989)]{Tied89}
-M.~Tiedtke.
-\newblock \emph{Mon. Wea. Rev.}, 117\penalty0 (8):\penalty0 1779--1800, 1989.
 
 \bibitem[Weller(2012)]{Wel12}
 H.~Weller.

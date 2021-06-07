@@ -5,44 +5,44 @@ The style file: myNat.bst
 Database file #1: Weller.bib
 Database file #2: Thuburn.bib
 Database file #3: Shipley.bib
-You've used 43 entries,
+You've used 41 entries,
             2761 wiz_defined-function locations,
-            958 strings with 12762 characters,
-and the built_in function-call counts, 21234 in all, are:
-= -- 1784
-> -- 1431
-< -- 23
-+ -- 481
-- -- 438
-* -- 1937
-:= -- 3274
-add.period$ -- 90
-call.type$ -- 43
-change.case$ -- 232
-chr.to.int$ -- 43
-cite$ -- 86
-duplicate$ -- 836
-empty$ -- 1640
-format.name$ -- 513
-if$ -- 4385
+            944 strings with 12472 characters,
+and the built_in function-call counts, 20416 in all, are:
+= -- 1710
+> -- 1400
+< -- 21
++ -- 470
+- -- 429
+* -- 1872
+:= -- 3153
+add.period$ -- 86
+call.type$ -- 41
+change.case$ -- 225
+chr.to.int$ -- 41
+cite$ -- 82
+duplicate$ -- 798
+empty$ -- 1561
+format.name$ -- 500
+if$ -- 4210
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 45
-newline$ -- 184
-num.names$ -- 172
-pop$ -- 488
+missing$ -- 43
+newline$ -- 176
+num.names$ -- 164
+pop$ -- 473
 preamble$ -- 1
-purify$ -- 232
+purify$ -- 225
 quote$ -- 0
-skip$ -- 690
+skip$ -- 661
 stack$ -- 0
-substring$ -- 1028
-swap$ -- 43
+substring$ -- 970
+swap$ -- 41
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 458
+type$ -- 436
 warning$ -- 0
-while$ -- 169
+while$ -- 161
 width$ -- 0
-write$ -- 485
+write$ -- 463

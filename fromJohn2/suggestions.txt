@@ -1,0 +1,51 @@
+
+Suggestion for paragraph 2 section 1
+
+These problems are so bad that weather forecast models are run without convection parameterisation
+as soon as the resolution is high enough to partially resolve convection; it is preferable to neglect
+the unresolved contribution to convection rather than introduce large errors by a poor parameterisation
+(Lean et al., 2008). The same problems occur with climate models; benchmark simulations require
+vast computing resources to attain resolutions at which convection parameterisation can be switched off,
+though still neglecting unresolved contributions to convection (Satoh et al., 2019).
+There is a pressing need to improve the modelling
+of convection to enable more accurate simulations at coarse resolution and to accurately represent
+subgrid-scale convection when convection is partially resolved.
+
+
+
+Suggestion for first paragraph of section 5.3
+
+Existing parameterisations of entrainment and detainment, and eddy diffusive representation of
+small scale turbulent fluxes, such as those used successfully in our single column modelling,
+will provide a valuable starting point for the proposed work, and will mitigate much of the risk.
+However, further work is needed to adapt these parameterisations for three-dimensional models,
+and especially to formulate the grid-scale dependence
+that will enable them to work seamlessly across the grey zone. Discovering quantitatively
+and causally correct parameterisations is difficult when processes are complex, as in moist convection.
+Our approach will be to build upon existing parameterisations, incorporating physical and fluid
+dynamical understanding, and extending them, for example, using Assumed PDFs (APDFs) and the
+theory of distributions, incorporating multi-moment information where appropriate. Important physical
+and mathematical constraints on the formulation will be taken into account. Vital to this work will be
+detailed diagnostics of LES data to validate proposed formulations and to motivate new ones.
+
+
+
+Are these covered elsewhere?
+
+We have derived the governing equations for the multi-fluid analogue of the MY hierarchy, but there remain
+some key questions, which we aim to investigate. Which combination of multiple fluids and multiple moments
+most efficiently describes the subgrid processes, and does the answer depend on flow regime or model resolution?
+How can multi-moment information be best used to inform multi-fluid entrainment and detrainment terms?
+How must tuneable coefficients in the MY system, e.g.\ in defining  the unresolved turbulent length scales, be modified
+for the multi-fluid case and what is their resolution dependence across the scales (e.g. in the grey zone)?
+
+Existing parameterisations of entrainment and detainment, and eddy diffusive representation of small scale turbulent
+fluxes, will provide a valuable starting point for the proposed work, and we have had some success with them in
+single column models. However, further work is needed to adapt these parameterisations for three-dimensional models,
+and especially to formulate the grid-scale dependence that will enable them to work seamlessly across the grey zone.
+Discovering quantitatively and causally correct parameterisations is difficult when processes are complex, as in moist
+convection. Our approach will be to build upon existing parameterisations, incorporating physical and fluid dynamical
+understanding, and extending them, for example, using Assumed PDFs (APDFs) and the theory of distributions, incorporating
+multi-moment information where appropriate. Important physical and mathematical constraints on the formulation will
+be taken into account. Vital to this work will be detailed diagnostics of LES data to validate proposed formulations
+and to motivate new ones.
